@@ -5,6 +5,7 @@ import Combine
 // MARK: - ViewModel Protocol
 
 protocol LocaleViewModelProtocol {
+    var selectedSegment: LocaleFormType {get set}
     var keyText: String { get set }
     var valueText: String { get set }
     var pathSelectionSubject: CurrentValueSubject<Bool, Never> { get }
@@ -14,7 +15,6 @@ protocol LocaleViewModelProtocol {
     func deleteKey() -> AnyPublisher<Void, FileOperationError>
     func sort() -> AnyPublisher<Void, FileOperationError>
     func updateValue() -> AnyPublisher<Void, FileOperationError>
-    var selectedSegment: LocaleFormType {get set}
 }
 
 // MARK: - ViewModel Implementation
